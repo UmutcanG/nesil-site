@@ -2,45 +2,145 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nesil — Gizlilik Politikası / Privacy Policy</title>
-<meta name="description" content="Nesil: Life Across Generations — gizlilik politikası / privacy policy. Kişisel veri toplanmaz.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nesil — Gizlilik Politikası · Privacy Policy</title>
+<meta name="description" content="Nesil: Life Across Generations gizlilik politikası. Kişisel veri toplanmaz, reklam yok, oyun internete bağlanmaz. / Privacy policy: no personal data collected, no ads, no internet connection.">
+<meta name="theme-color" content="#2B3566">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/icon.png">
+<meta property="og:title" content="Nesil — Privacy Policy">
+<meta property="og:description" content="Nesil collects no personal data. No ads, no tracking, no internet connection while you play.">
+<meta property="og:image" content="https://nesil.lokzy.app/img/og.png">
+<meta property="og:type" content="website">
 <style>
-  :root { --ink: #1f2240; --soft: #5b5f7a; --brand: #5E4A7A; --deep: #2B3566; --paper: #faf8f4; --line: #e6e1d8; }
+  /* Fonts are served from this site: a privacy page should not call anyone else. */
+  @font-face { font-family: "Gloock"; src: url("fonts/gloock.ttf") format("truetype"); font-display: swap; }
+  @font-face { font-family: "Literata"; src: url("fonts/literata-400.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Literata"; src: url("fonts/literata-500.ttf") format("truetype"); font-weight: 500 700; font-display: swap; }
+
+  :root {
+    --night: #2B3566; --dusk: #8E6487; --peach: #F2A38C; --sun: #FFE3A8; --cream: #FFF6F3;
+    --paper: #FFFAF1; --ink: #1E2233; --soft: #5B6178; --line: #EAE2D6; --accent: #A85A1C;
+    --title: "Gloock", Georgia, serif; --body: "Literata", Georgia, "Times New Roman", serif;
+    --ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  header { background: linear-gradient(160deg, var(--deep), var(--brand)); color: #fff; padding: 48px 24px 40px; text-align: center; }
-  header .name { font-size: 15px; letter-spacing: .12em; text-transform: uppercase; opacity: .85; margin: 0 0 8px; }
-  header h1 { font-size: 28px; margin: 0; font-weight: 700; }
-  nav { text-align: center; padding: 14px; border-bottom: 1px solid var(--line); background: #fff; }
-  nav a { color: var(--brand); margin: 0 12px; text-decoration: none; font-weight: 600; }
-  main { max-width: 720px; margin: 0 auto; padding: 24px 24px 64px; }
-  section + section { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); }
-  h2 { color: var(--brand); font-size: 22px; margin: 0 0 4px; }
-  h3 { font-size: 17px; margin: 28px 0 6px; }
-  .date { color: var(--soft); font-size: 14px; margin: 0 0 20px; }
-  ul { padding-left: 22px; }
-  li { margin: 4px 0; }
-  a { color: var(--brand); }
-  footer { text-align: center; color: var(--soft); font-size: 13px; padding: 0 24px 40px; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 18px/1.7 var(--body); -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); }
+
+  /* ---------- Sky ---------- */
+  .sky {
+    position: relative; overflow: hidden; color: var(--cream); text-align: center;
+    padding: 64px 24px 120px;
+    background: linear-gradient(180deg, var(--night) 0%, #4B4677 38%, var(--dusk) 68%, var(--peach) 100%);
+  }
+  .stars { position: absolute; inset: 0; pointer-events: none; }
+  .star { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: var(--cream); opacity: .7; animation: twinkle 4s ease-in-out infinite; }
+  @keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .9; } }
+  .mark { width: 132px; height: 132px; margin: 0 auto 20px; display: block; filter: drop-shadow(0 10px 30px rgba(43,53,102,.45)); animation: rise 1.2s cubic-bezier(.2,.7,.2,1) both; }
+  .mark .glow { animation: glow 5s ease-in-out infinite; transform-origin: 305px 386px; }
+  @keyframes glow { 0%, 100% { opacity: .55; transform: scale(1); } 50% { opacity: .9; transform: scale(1.08); } }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  .brand { font-family: var(--title); font-size: clamp(44px, 9vw, 68px); line-height: 1; margin: 0; letter-spacing: .01em; animation: rise 1.2s .1s cubic-bezier(.2,.7,.2,1) both; }
+  .tagline { margin: 10px 0 0; font-size: 18px; opacity: .9; font-style: italic; animation: rise 1.2s .2s cubic-bezier(.2,.7,.2,1) both; }
+  .badge { display: inline-block; margin-top: 26px; padding: 7px 16px; border: 1px solid rgba(255,246,243,.45); border-radius: 999px; font: 600 12px/1 var(--ui); letter-spacing: .14em; text-transform: uppercase; background: rgba(255,246,243,.1); backdrop-filter: blur(4px); animation: rise 1.2s .3s cubic-bezier(.2,.7,.2,1) both; }
+  .horizon { position: absolute; left: -5%; right: -5%; bottom: -1px; height: 70px; background: var(--paper); border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+
+  /* ---------- Language switch ---------- */
+  .switch { position: relative; z-index: 2; margin: -34px auto 0; width: max-content; display: flex; gap: 4px; padding: 5px; background: #fff; border-radius: 999px; box-shadow: 0 8px 30px rgba(43,53,102,.15); }
+  .switch button { border: 0; background: transparent; font: 600 14px/1 var(--ui); color: var(--soft); padding: 11px 20px; border-radius: 999px; cursor: pointer; }
+  .switch button[aria-pressed="true"] { background: var(--night); color: var(--cream); }
+
+  main { max-width: 760px; margin: 0 auto; padding: 36px 22px 40px; }
+  .lang[hidden] { display: none; }
+
+  /* ---------- Promise cards ---------- */
+  .promises { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 8px 0 44px; }
+  .promise { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 20px 18px; display: flex; gap: 14px; align-items: flex-start; box-shadow: 0 2px 0 rgba(43,53,102,.03); transition: transform .25s, box-shadow .25s; }
+  .promise:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(43,53,102,.10); }
+  .promise .ico { flex: none; width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; background: linear-gradient(160deg, var(--night), var(--dusk)); }
+  .promise .ico svg { width: 22px; height: 22px; stroke: var(--sun); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .promise b { display: block; font: 600 16px/1.3 var(--ui); margin-bottom: 3px; }
+  .promise span { font-size: 15px; line-height: 1.5; color: var(--soft); }
+
+  /* ---------- Text ---------- */
+  .meta { font: 500 13px/1 var(--ui); letter-spacing: .08em; text-transform: uppercase; color: var(--soft); margin: 0 0 8px; }
+  h2 { font-family: var(--title); font-weight: 400; font-size: 34px; line-height: 1.15; margin: 0 0 14px; color: var(--night); }
+  .lead { font-size: 19px; color: #33384f; margin: 0 0 8px; }
+  h3 { font-family: var(--title); font-weight: 400; font-size: 23px; color: var(--night); margin: 38px 0 8px; display: flex; align-items: center; gap: 12px; }
+  h3::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--sun); box-shadow: 0 0 0 4px rgba(242,163,140,.35); flex: none; }
+  p { margin: 0 0 12px; }
+  ul.list { list-style: none; padding: 0; margin: 10px 0 0; }
+  ul.list li { position: relative; padding-left: 28px; margin: 8px 0; }
+  ul.list li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 12px; height: 6px; border-left: 2px solid var(--dusk); border-bottom: 2px solid var(--dusk); transform: rotate(-45deg); }
+  .contact { margin-top: 44px; padding: 26px; border-radius: 22px; background: linear-gradient(160deg, var(--night), var(--dusk)); color: var(--cream); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
+  .contact p { margin: 0; font-size: 17px; }
+  .contact a { display: inline-block; background: var(--cream); color: var(--night); text-decoration: none; font: 600 15px/1 var(--ui); padding: 13px 20px; border-radius: 999px; }
+
+  footer { text-align: center; padding: 26px 22px 48px; color: var(--soft); font: 14px/1.6 var(--ui); }
+  footer svg { width: 34px; height: 34px; display: block; margin: 0 auto 8px; opacity: .85; }
+
+  @media (max-width: 560px) {
+    body { font-size: 17px; }
+    .promises { grid-template-columns: 1fr; }
+    h2 { font-size: 29px; }
+    .sky { padding-top: 48px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
 </style>
 </head>
 <body>
-<header>
-  <p class="name">Nesil: Life Across Generations</p>
-  <h1>Gizlilik Politikası · Privacy Policy</h1>
+
+<!-- The Nesil mark: an arch "n", a rising sun and a star (docs/logo/nesil-isaret.svg without its square). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="sunglow"><stop offset="0.55" stop-color="#FFE3A8" stop-opacity=".55"/><stop offset="1" stop-color="#FFE3A8" stop-opacity="0"/></radialGradient>
+    <symbol id="nesil-mark" viewBox="0 0 1024 1024">
+      <g transform="translate(512 512) scale(0.92) translate(-512 -575)">
+        <mask id="cut"><rect width="1024" height="1024" fill="white"/><circle cx="305.17" cy="386.45" r="116" fill="black"/></mask>
+        <path d="M242 860 L242 560 A 270 270 0 0 1 782 560 L782 860" fill="none" stroke="#FFF6F3" stroke-width="64" stroke-linecap="round" stroke-linejoin="round" mask="url(#cut)"/>
+        <circle class="glow" cx="305.17" cy="386.45" r="150" fill="url(#sunglow)"/>
+        <circle cx="305.17" cy="386.45" r="86" fill="#FFE3A8"/>
+        <path d="M512 370 Q520 412 562 420 Q520 428 512 470 Q504 428 462 420 Q504 412 512 370Z" fill="#FFF6F3"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="sky">
+  <div class="stars" aria-hidden="true"></div>
+  <svg class="mark" role="img" aria-label="Nesil"><use href="#nesil-mark"/></svg>
+  <h1 class="brand">Nesil</h1>
+  <p class="tagline">Life Across Generations</p>
+  <span class="badge" data-tr="Gizlilik Politikası" data-en="Privacy Policy">Gizlilik Politikası</span>
+  <div class="horizon" aria-hidden="true"></div>
 </header>
-<nav><a href="#tr">Türkçe</a><a href="#en">English</a></nav>
+
+<div class="switch" role="group" aria-label="Dil / Language">
+  <button type="button" data-lang="tr" aria-pressed="true">Türkçe</button>
+  <button type="button" data-lang="en" aria-pressed="false">English</button>
+</div>
+
 <main>
 
-<section id="tr" lang="tr">
+<section class="lang" id="tr" lang="tr">
+  <div class="promises">
+    <div class="promise"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><div><b>Veri toplamaz</b><span>Hesap yok, ad yok, e-posta yok.</span></div></div>
+    <div class="promise"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div><div><b>Reklam yok</b><span>Reklam kimliği ve izleme yok.</span></div></div>
+    <div class="promise"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5.5 12a10 10 0 0 1 13 0"/><path d="M9 15.5a5 5 0 0 1 6 0"/><path d="M3 3l18 18"/></svg></div><div><b>İnternete bağlanmaz</b><span>Oynarken hiçbir şey gönderilmez.</span></div></div>
+    <div class="promise"><div class="ico"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div><div><b>Cihazında kalır</b><span>İlerlemen yalnızca telefonunda.</span></div></div>
+  </div>
+
+  <p class="meta">Son güncelleme · 30 Ekim 2026</p>
   <h2>Gizlilik Politikası</h2>
-  <p class="date">Son güncelleme: 30 Ekim 2026</p>
-  <p>Nesil, telefonunda çalışan bir hayat simülasyonu oyunudur. Bu metin oyunun hangi bilgileri kullandığını anlatır.</p>
+  <p class="lead">Nesil, telefonunda çalışan bir hayat simülasyonu oyunudur. Bu metin oyunun hangi bilgileri kullandığını anlatır.</p>
 
   <h3>Toplanan bilgiler</h3>
   <p><strong>Hiçbiri.</strong> Nesil:</p>
-  <ul>
+  <ul class="list">
     <li>Hesap açmanı istemez; adını, e-postanı, telefon numaranı sormaz.</li>
     <li>Konumunu, kişilerini, fotoğraflarını, mikrofonunu ya da kameranı kullanmaz.</li>
     <li>Reklam göstermez, reklam kimliği kullanmaz.</li>
@@ -60,18 +160,27 @@
   <h3>Değişiklikler</h3>
   <p>Bu politika değişirse (örneğin oyuna çökme raporlama eklenirse) yeni metin bu sayfada yayımlanır ve "Son güncelleme" tarihi değişir.</p>
 
-  <h3>İletişim</h3>
-  <p>Sorular için: <a href="mailto:nesil@lokzy.app">nesil@lokzy.app</a></p>
+  <div class="contact">
+    <p>Sorun ya da önerin mi var?</p>
+    <a href="mailto:nesil@lokzy.app">nesil@lokzy.app</a>
+  </div>
 </section>
 
-<section id="en" lang="en">
+<section class="lang" id="en" lang="en">
+  <div class="promises">
+    <div class="promise"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><div><b>No data collected</b><span>No account, no name, no email.</span></div></div>
+    <div class="promise"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div><div><b>No ads</b><span>No advertising ID, no tracking.</span></div></div>
+    <div class="promise"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5.5 12a10 10 0 0 1 13 0"/><path d="M9 15.5a5 5 0 0 1 6 0"/><path d="M3 3l18 18"/></svg></div><div><b>Works offline</b><span>Nothing is sent while you play.</span></div></div>
+    <div class="promise"><div class="ico"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div><div><b>Stays on your device</b><span>Your progress lives on your phone only.</span></div></div>
+  </div>
+
+  <p class="meta">Last updated · October 30, 2026</p>
   <h2>Privacy Policy</h2>
-  <p class="date">Last updated: October 30, 2026</p>
-  <p>Nesil is a life simulation game that runs on your phone. This page explains what information the game uses.</p>
+  <p class="lead">Nesil is a life simulation game that runs on your phone. This page explains what information the game uses.</p>
 
   <h3>Information collected</h3>
   <p><strong>None.</strong> Nesil:</p>
-  <ul>
+  <ul class="list">
     <li>Does not ask you to create an account, and does not ask for your name, email or phone number.</li>
     <li>Does not use your location, contacts, photos, microphone or camera.</li>
     <li>Shows no ads and uses no advertising ID.</li>
@@ -91,11 +200,49 @@
   <h3>Changes</h3>
   <p>If this policy changes (for example, if crash reporting is added to the game), the new text will be published on this page with a new "Last updated" date.</p>
 
-  <h3>Contact</h3>
-  <p>Questions: <a href="mailto:nesil@lokzy.app">nesil@lokzy.app</a></p>
+  <div class="contact">
+    <p>Questions or ideas?</p>
+    <a href="mailto:nesil@lokzy.app">nesil@lokzy.app</a>
+  </div>
 </section>
 
 </main>
-<footer>Nesil: Life Across Generations</footer>
+
+<footer>
+  <svg aria-hidden="true" viewBox="0 0 1024 1024"><circle cx="512" cy="512" r="512" fill="#2B3566"/><use href="#nesil-mark"/></svg>
+  Nesil: Life Across Generations · © 2026
+</footer>
+
+<script>
+  // Language: the reader's own, unless they pick one. Without JavaScript both languages simply show.
+  (function () {
+    var buttons = document.querySelectorAll('.switch button');
+    var badge = document.querySelector('.badge');
+    function show(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById('tr').hidden = lang !== 'tr';
+      document.getElementById('en').hidden = lang !== 'en';
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+      badge.textContent = badge.dataset[lang];
+      document.title = lang === 'tr' ? 'Nesil — Gizlilik Politikası' : 'Nesil — Privacy Policy';
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.lang); history.replaceState(null, '', '#' + b.dataset.lang); }); });
+    var hash = location.hash.slice(1);
+    show(hash === 'en' || hash === 'tr' ? hash : (navigator.language || 'tr').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
+
+    // A few stars in the sky, placed once.
+    var sky = document.querySelector('.stars');
+    for (var i = 0; i < 38; i++) {
+      var s = document.createElement('span');
+      s.className = 'star';
+      s.style.left = Math.random() * 100 + '%';
+      s.style.top = Math.random() * 62 + '%';
+      s.style.animationDelay = (Math.random() * 4).toFixed(2) + 's';
+      var size = Math.random() < 0.2 ? 4 : 2;
+      s.style.width = s.style.height = size + 'px';
+      sky.appendChild(s);
+    }
+  })();
+</script>
 </body>
 </html>
